@@ -1,9 +1,9 @@
 # ToDoApp
 
-npm install (to install node.js dependencies)
+npm install
 
-bower install (to install front-end packages)
+bower install 
 
-npm run gulp (to start the server)
+npm run gulp 
 
 http://localhost:3000
