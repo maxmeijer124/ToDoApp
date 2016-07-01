@@ -1,0 +1,35 @@
+<div>
+    <h1>Ticket overview</h1>
+    <br/>
+    <div>
+        <div ng-if="vm.doneSuccess" class='alert alert-success'>
+            {{vm.doneSuccessMessage}}
+        </div>
+        <div ng-if="vm.closedSuccess" class='alert alert-success'>
+            Ticket closed!
+        </div>
+    </div>
+    <br/>
+
+
+        <span ng-repeat="ticket in vm.tickets" ng-class="{'ticketRead':ticket.done}">
+            <div class="ticket">
+            <br />
+            <div class="row">
+                <div class="col-sm-12" id="bold"><p>Title</p></div>
+                <div class="col-sm-12"><p>{{ticket.title}}</p></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" id="bold"><p>Client</p></div>
+                <div class="col-sm-12"><p>{{ticket.client}}</p></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" id="bold"><p>Description</p></div>
+                <div class="col-sm-12"><p>{{ticket.description}}</p></div>
+            </div>
+            <button ng-click="vm.markTicketAsDone(ticket.ticketId, !ticket.done)" class="btn">Done</button> 
+            <button ng-click="vm.addToClosed(ticket.ticketId)" class="btn" ng-disabled="!ticket.done">Close</button>
+            <br />
+            </div>
+            </div>
+        </span>

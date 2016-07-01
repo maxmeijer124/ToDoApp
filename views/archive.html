@@ -1,0 +1,22 @@
+<div>
+    <h1>Closed tickets</h1>
+    <br/>
+    <span ng-repeat="ticket in vm.tickets">
+        <div class="ticket">
+            <br />
+            <div class="row">
+                <div class="col-sm-12" id="bold">Title</div>
+                <div class="col-sm-12">{{ticket.title}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" id="bold">Client</div>
+                <div class="col-sm-12">{{ticket.client}}</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" id="bold">Description</div>
+                <div class="col-sm-12">{{ticket.description}}</div>
+            </div>
+        </div>
+    </span>
+</div>
+

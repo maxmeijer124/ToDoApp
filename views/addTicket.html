@@ -1,0 +1,49 @@
+<div>
+    <div class="row">
+        <h1>Add a new Ticket</h1>
+    </div>
+    <div class="row">
+        <div ng-if="vm.addSuccess" class='alert alert-success'>Ticket added succes.</div>
+    </div>
+    <div class="row">
+        <div ng-if="vm.addFailed" class='alert alert-error'>Sorry, something went wrong. Ticket is not added.</div>
+    </div>
+
+    <form name="vm.addTicketForm" ng-submit='vm.addTicket()' novalidate>
+        <div class="row">
+            <div class="input-group">
+                <label for="title"><p>Title</p></label>
+                <input type="text" name="title" id="title" class="form-control" placeholder="Title" ng-model="vm.ticket.title" required ng-model-options="{ updateOn: 'blur' }" unique-ticket-title>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <label for="client"><p>Client</p></label>
+                <input type="text" name="client" id="client" class="form-control" placeholder="Client" ng-model="vm.ticket.client" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group">
+                <label for="Description"><p>Description</p></label>
+                <textarea class="form-control" rows="12" id="Description" placeholder="Description" ng-model="vm.ticket.description" required></textarea>
+            </div>
+        </div>
+        <div class="row"
+            <div class="input-group">
+                <input type="submit" value="Add Ticket" class="btn btn-primary" ng-disabled="vm.addTicketForm.$invalid" />
+                <button ng-click="vm.resetTicket()" class="btn">Reset</button>
+            </div>
+        </div>
+    </form>
+
+    <div ng-if='vm.addTicketForm.title.$dirty' ng-messages='vm.addTicketForm.title.$error' class='error-messages'>
+        <div ng-message='required'>Title is missing value</div>
+        <div ng-message='uniqueTicketTitle'>Title already exists</div>
+    </div>
+    <div ng-if='vm.addTicketForm.description.$dirty' ng-messages='vm.addTicketForm.description.$error' class='error-messages'>
+        <div ng-message='required'>Description is missing value</div>
+    </div>
+    <div ng-if='vm.addTicketForm.client.$dirty' ng-messages='vm.addTicketForm.client.$error' class='error-messages'>
+        <div ng-message='required'>Client is missing value</div>
+    </div>
+</div>

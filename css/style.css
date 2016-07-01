@@ -1,0 +1,56 @@
+body {
+    height:100vh;
+}
+
+footer {
+    background-color: #000;
+    height: 100px;
+    margin-top: 200px;
+    position: bottom;
+}
+
+.navbar-nav {
+    float: none;
+    display: inline-block;
+}
+
+.collapse .navbar-collapse {
+    padding-left: 50px;
+}
+
+.ticket {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#bold {
+    font-weight: bold;
+}
+
+.row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.view {
+    margin-top: 200px;
+    align-content: center;
+}
+
+.ticketDone{
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.input-group{
+    margin-top: 20px;
+    display: block;
+}
+
+.ng-invalid.ng-touched{
+    border-color:red;
+}
+
+.error-messages{
+    color: red;
+}
